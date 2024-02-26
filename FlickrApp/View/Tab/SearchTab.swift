@@ -1,5 +1,3 @@
-//
-//  SearchTab.swift
 //  FlickrApp
 //
 //  Created by Suyash Srivastav on 20/02/24.
@@ -15,6 +13,8 @@ struct SearchTab: View {
 
     var body: some View {
         VStack(spacing: 0) {
+            Text("Flickr Search")
+                .font(.system(size: 24))
             SearchBar(text: $searchText, onSearch: {
                 isLoading = true
                 viewModel.searchPhotos(query: searchText)

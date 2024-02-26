@@ -1,5 +1,3 @@
-//
-//  SearchBar.swift
 //  FlickrApp
 //
 //  Created by Suyash Srivastav on 07/02/24.

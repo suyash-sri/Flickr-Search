@@ -1,5 +1,3 @@
-//
-//  SettingsTab.swift
 //  FlickrApp
 //
 //  Created by Suyash Srivastav on 20/02/24.

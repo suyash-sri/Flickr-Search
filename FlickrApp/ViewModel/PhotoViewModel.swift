@@ -1,3 +1,5 @@
+//
+//  PhotoViewModel.swift
 //  FlickrApp
 //
 //  Created by Suyash Srivastav on 07/02/24.
@@ -6,6 +8,7 @@ import SwiftUI
 
 class PhotoViewModel: ObservableObject {
     @Published var photos: [Photo] = []
+    @Published var favorites: [Photo] = []
     @Published var page = 1
     @Published var isLoading = false
     
@@ -35,6 +38,11 @@ class PhotoViewModel: ObservableObject {
  
         
         return URL(string: baseURL + path)
+    }
+    func addToFavorite(photo:Photo){
+        if !favorites.contains(where: {$0.id==photo.id}){
+            favorites.append(photo)
+        }
     }
 }
 
