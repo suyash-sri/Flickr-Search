@@ -1,5 +1,3 @@
-//
-//  Photo.swift
 //  FlickrApp
 //
 //  Created by Suyash Srivastav on 07/02/24.
@@ -11,7 +9,6 @@ struct Photo: Codable,Identifiable, Equatable {
     let server: String
     let secret: String
     
-    // Equatable conformance
     static func == (lhs: Photo, rhs: Photo) -> Bool {
         return lhs.id == rhs.id
     }

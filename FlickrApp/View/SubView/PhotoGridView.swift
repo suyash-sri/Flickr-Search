@@ -1,9 +1,6 @@
-//
-//  PhotoGridView.swift
 //  FlickrApp
 //
 //  Created by Suyash Srivastav on 12/02/24.
-//
 
 import SwiftUI
 
@@ -14,27 +11,21 @@ struct PhotoGridView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            // Search bar fixed at the top
             SearchBar(text: $searchText, onSearch: {
-                isLoading = true // Set loading state to true when searching
+                isLoading = true 
                 viewModel.searchPhotos(query: searchText)
             })
             .padding()
             
-            // Use ScrollView with LazyVGrid for the grid view
             ScrollView {
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
                     ForEach(viewModel.photos, id: \.id) { photo in
                         NavigationLink(destination: PhotoView(viewModel: viewModel, photo: photo)) {
-                            // Display the photo in the grid using an Image view.
                             if photo != viewModel.photos.last {
-                                // Check if the current photo is not the last one, and load more if needed
                                 AsyncImage(url: viewModel.buildPhotoURL(for: photo)) { phase in
-                                    // Use Group to handle the various states of the AsyncImage
                                     Group {
                                         switch phase {
                                         case .empty:
-                                            // Placeholder while loading
                                             if isLoading {
                                                 ProgressView()
                                             } else {
@@ -43,13 +34,11 @@ struct PhotoGridView: View {
                                                     .aspectRatio(contentMode: .fill)
                                             }
                                         case .success(let image):
-                                            // Image loaded successfully
                                             ZStack(alignment: .bottom) {
                                                 image
                                                     .resizable()
                                                     .aspectRatio(contentMode: .fill)
                                                 
-                                                // Title displayed at the bottom
                                                 Text(photo.title)
                                                     .font(.caption)
                                                     .multilineTextAlignment(.center)
@@ -60,23 +49,21 @@ struct PhotoGridView: View {
                                                     .fixedSize(horizontal: false, vertical: true)
                                             }
                                         case .failure:
-                                            // Placeholder for failure
                                             Image(systemName: "photo")
                                                 .resizable()
                                                 .aspectRatio(contentMode: .fill)
                                         @unknown default:
-                                            // Placeholder for unknown state
+                                            
                                             Image(systemName: "photo")
                                                 .resizable()
                                                 .aspectRatio(contentMode: .fill)
                                         }
                                     }
                                 }
-                                .frame(height: 100) // Adjust the height according to your preference
+                                .frame(height: 100) 
                                 .cornerRadius(10)
-                                .padding(4) // Adjust the padding between grid items
+                                .padding(4) 
                             } else {
-                                // Placeholder for the last item
                                 ProgressView()
                                     .onAppear {
                                         viewModel.searchPhotos(query: searchText)

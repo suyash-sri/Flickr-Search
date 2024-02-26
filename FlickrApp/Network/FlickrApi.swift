@@ -1,9 +1,6 @@
-//
-//  FlickrApi.swift
 //  FlickrApp
 //
 //  Created by Suyash Srivastav on 07/02/24.
-//
 
 import Foundation
 
@@ -42,9 +39,6 @@ class FlickrAPI {
                 completion(.failure(error))
                 return
             }
-//            if let jsonString = String(data: data, encoding: .utf8) {
-//                     print("JSON Response: \(jsonString)")
-//                 }
 
             do {
                 let decoder = JSONDecoder()
