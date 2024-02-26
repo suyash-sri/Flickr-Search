@@ -1,3 +1,5 @@
+//
+//  PhotoView.swift
 //  FlickrApp
 //
 //  Created by Suyash Srivastav on 07/02/24.
@@ -25,6 +27,15 @@ struct PhotoView: View {
                     }
                 }
             Spacer()
+            Button(action: {
+                          // Add to Favorite logic here
+                          viewModel.addToFavorite(photo: photo)
+                      }) {
+                          Label("Add to Favorite", systemImage: "heart.fill")
+                              .font(.headline)
+                              .foregroundColor(.blue)
+                      }
+                      .padding()
         }
       
         .navigationTitle("Photo Details")
