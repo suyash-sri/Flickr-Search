@@ -92,14 +92,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		043820272B8CAF4100B63DFD /* Tab */ = {
+		043820272B8CAF4100B63DFD /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
 				0438202F2B8CB0D000B63DFD /* SearchTab.swift */,
 				043820312B8CB0D200B63DFD /* SettingsTab.swift */,
 				0438202D2B8CB0CC00B63DFD /* FavouriteTab.swift */,
 			);
-			path = Tab;
+			path = Tabs;
 			sourceTree = "<group>";
 		};
 		044C49862B7354F600CE947D /* Network */ = {
@@ -130,7 +130,7 @@
 		044C49912B73687300CE947D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				043820272B8CAF4100B63DFD /* Tab */,
+				043820272B8CAF4100B63DFD /* Tabs */,
 				044C49942B736B0D00CE947D /* SubView */,
 				04E0BC6E2B721A25001652D0 /* ContentView.swift */,
 				044C49922B736AD900CE947D /* SearchBar.swift */,
