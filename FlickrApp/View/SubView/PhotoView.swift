@@ -17,28 +17,33 @@ struct PhotoView: View {
                 .padding()
 
             if let url = viewModel.buildPhotoURL(for: photo) {
-            
-                    AsyncImage(url: url) { image in
-                        image.resizable()
-                            .aspectRatio(contentMode: .fit)
-                    } placeholder: {
-     
-                        ProgressView()
-                    }
+                AsyncImage(url: url) { image in
+                    image.resizable()
+                        .aspectRatio(contentMode: .fit)
+                } placeholder: {
+                    ProgressView()
                 }
+            }
             Spacer()
             Button(action: {
-                          // Add to Favorite logic here
-                          viewModel.addToFavorite(photo: photo)
-                      }) {
-                          Label("Add to Favorite", systemImage: "heart.fill")
-                              .font(.headline)
-                              .foregroundColor(.blue)
-                      }
-                      .padding()
+                if viewModel.isFavorite(photo: photo) {
+                    viewModel.removeFromFavorite(photo: photo)
+                } else {
+                    viewModel.addToFavorite(photo: photo)
+                }
+            }) {
+                if viewModel.isFavorite(photo: photo) {
+                    Label("Remove from Favorites", systemImage: "heart.fill")
+                        .font(.headline)
+                        .foregroundColor(.red) // You can customize the color
+                } else {
+                    Label("Add to Favorite", systemImage: "heart.fill")
+                        .font(.headline)
+                        .foregroundColor(.blue)
+                }
+            }
+            .padding()
         }
-      
         .navigationTitle("Photo Details")
     }
 }
-

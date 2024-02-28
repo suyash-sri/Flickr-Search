@@ -32,6 +32,7 @@ class PhotoViewModel: ObservableObject {
             }
         }
     }
+    
     func buildPhotoURL(for photo: Photo) -> URL? {
         let baseURL = "https://live.staticflickr.com/"
         let path = "\(photo.server)/\(photo.id)_\(photo.secret)_w.jpg"
@@ -39,9 +40,20 @@ class PhotoViewModel: ObservableObject {
         
         return URL(string: baseURL + path)
     }
-    func addToFavorite(photo:Photo){
-        if !favorites.contains(where: {$0.id==photo.id}){
+
+    func isFavorite(photo: Photo) -> Bool {
+        return favorites.contains { $0.id == photo.id }
+    }
+
+    func addToFavorite(photo: Photo) {
+        if !isFavorite(photo: photo) {
             favorites.append(photo)
+        }
+    }
+
+    func removeFromFavorite(photo: Photo) {
+        if let index = favorites.firstIndex(where: { $0.id == photo.id }) {
+            favorites.remove(at: index)
         }
     }
 }

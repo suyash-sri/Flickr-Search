@@ -11,7 +11,7 @@ struct FavoriteTab: View {
         VStack {
             Text("Favorite")
                 .font(.title)
-                .padding()
+
 
             List(viewModel.favorites, id: \.id) { favoritePhoto in
                 NavigationLink(destination: PhotoView(viewModel: viewModel, photo: favoritePhoto)) {
