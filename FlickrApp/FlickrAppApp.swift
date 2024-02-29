@@ -1,5 +1,3 @@
-//
-//  FlickrAppApp.swift
 //  FlickrApp
 //
 //  Created by Suyash Srivastav on 06/02/24.

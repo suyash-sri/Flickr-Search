@@ -1,104 +1,37 @@
-//
-//  ContentView.swift
-//  FlickrApp
-//
-//  Created by Suyash Srivastav on 06/02/24.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     @State private var searchText = ""
     @ObservedObject private var viewModel = PhotoViewModel()
-    @State private var isLoading = false
 
     var body: some View {
         NavigationView {
-            VStack(spacing: 0) {
-            
-                SearchBar(text: $searchText, onSearch: {
-                    isLoading = true
-                    viewModel.searchPhotos(query: searchText)
-                })
-                .padding()
-                ScrollView {
-                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
-                        ForEach(viewModel.photos, id: \.id) { photo in
-                            NavigationLink(destination: PhotoView(viewModel: viewModel, photo: photo)) {
-                                if photo != viewModel.photos.last {
-                                    AsyncImage(url: viewModel.buildPhotoURL(for: photo)) { phase in
-                                      
-                                        Group {
-                                            switch phase {
-                                            case .empty:
-                                             
-                                                if isLoading {
-                                                    ProgressView()
-                                                } else {
-                                                    Image(systemName: "photo")
-                                                        .resizable()
-                                                        .aspectRatio(contentMode: .fill)
-                                                }
-                                            case .success(let image):
-                                           
-                                                ZStack(alignment: .bottom) {
-                                                    image
-                                                        .resizable()
-                                                        .aspectRatio(contentMode: .fill)
-
-                                                 
-                                                    Text(photo.title)
-                                                        .font(.caption)
-                                                        .multilineTextAlignment(.center)
-                                                        .padding(8)
-                                                        .lineLimit(1)
-                                                        .background(Color.black.opacity(0.7))
-                                                        .foregroundColor(.white)
-                                                        .fixedSize(horizontal: false, vertical: true)
-                                                }
-                                            case .failure:
-                                             
-                                                Image(systemName: "photo")
-                                                    .resizable()
-                                                    .aspectRatio(contentMode: .fill)
-                                            @unknown default:
-                                              
-                                                Image(systemName: "photo")
-                                                    .resizable()
-                                                    .aspectRatio(contentMode: .fill)
-                                            }
-                                        }
-                                    }
-                                    .frame(height: 100)
-                                    .cornerRadius(10)
-                                    .padding(4)
-                                } else {
-                                
-                                    ProgressView()
-                                        .onAppear {
-                                            viewModel.searchPhotos(query: searchText)
-                                        }
-                                }
-                            }
-                        }
+            TabView {
+                SearchTab(searchText: $searchText, viewModel: viewModel)
+                    .tabItem {
+                        Label("Search", systemImage: "magnifyingglass")
                     }
-                }
+                    .tag(0)
+                FavoriteTab(viewModel: viewModel)
+                                 .tabItem {
+                                     Label("Favorite", systemImage: "heart")
+                                 }
+                    .tag(1)
+                SettingsTab()
+                                .tabItem {
+                                    Label("Settings", systemImage: "gearshape")
+                                }
+                    .tag(2)
+              
             }
-            .navigationTitle("Flickr App")
+            .background(Color.white)
+            .zIndex(1)
         }
     }
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
-}
-
-
-
-
-#Preview {
-    ContentView()
 }

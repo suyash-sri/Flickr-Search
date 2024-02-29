@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0438202E2B8CB0CC00B63DFD /* FavouriteTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0438202D2B8CB0CC00B63DFD /* FavouriteTab.swift */; };
+		043820302B8CB0D000B63DFD /* SearchTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0438202F2B8CB0D000B63DFD /* SearchTab.swift */; };
+		043820322B8CB0D200B63DFD /* SettingsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043820312B8CB0D200B63DFD /* SettingsTab.swift */; };
 		044C49882B7355B500CE947D /* FlickrApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044C49872B7355B500CE947D /* FlickrApi.swift */; };
 		044C498B2B735FFA00CE947D /* FlickrResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044C498A2B735FFA00CE947D /* FlickrResponse.swift */; };
 		044C498D2B73602000CE947D /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044C498C2B73602000CE947D /* Photo.swift */; };
@@ -41,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0438202D2B8CB0CC00B63DFD /* FavouriteTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteTab.swift; sourceTree = "<group>"; };
+		0438202F2B8CB0D000B63DFD /* SearchTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTab.swift; sourceTree = "<group>"; };
+		043820312B8CB0D200B63DFD /* SettingsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTab.swift; sourceTree = "<group>"; };
 		044C49872B7355B500CE947D /* FlickrApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrApi.swift; sourceTree = "<group>"; };
 		044C498A2B735FFA00CE947D /* FlickrResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrResponse.swift; sourceTree = "<group>"; };
 		044C498C2B73602000CE947D /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
@@ -86,6 +92,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		043820272B8CAF4100B63DFD /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				0438202F2B8CB0D000B63DFD /* SearchTab.swift */,
+				043820312B8CB0D200B63DFD /* SettingsTab.swift */,
+				0438202D2B8CB0CC00B63DFD /* FavouriteTab.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
 		044C49862B7354F600CE947D /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +130,7 @@
 		044C49912B73687300CE947D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				043820272B8CAF4100B63DFD /* Tabs */,
 				044C49942B736B0D00CE947D /* SubView */,
 				04E0BC6E2B721A25001652D0 /* ContentView.swift */,
 				044C49922B736AD900CE947D /* SearchBar.swift */,
@@ -320,11 +337,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043820322B8CB0D200B63DFD /* SettingsTab.swift in Sources */,
 				044C49932B736AD900CE947D /* SearchBar.swift in Sources */,
 				04E0BC6F2B721A25001652D0 /* ContentView.swift in Sources */,
 				044C49902B73665F00CE947D /* PhotoViewModel.swift in Sources */,
 				044C498B2B735FFA00CE947D /* FlickrResponse.swift in Sources */,
 				04EC57A62B7A0D1C004287B3 /* PhotoGridView.swift in Sources */,
+				043820302B8CB0D000B63DFD /* SearchTab.swift in Sources */,
+				0438202E2B8CB0CC00B63DFD /* FavouriteTab.swift in Sources */,
 				04E0BC6D2B721A25001652D0 /* FlickrAppApp.swift in Sources */,
 				044C49882B7355B500CE947D /* FlickrApi.swift in Sources */,
 				044C498D2B73602000CE947D /* Photo.swift in Sources */,
@@ -488,6 +508,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FlickrApp/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -524,6 +545,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FlickrApp/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
