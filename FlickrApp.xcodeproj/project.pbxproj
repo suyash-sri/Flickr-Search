@@ -16,6 +16,8 @@
 		044C49902B73665F00CE947D /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044C498F2B73665F00CE947D /* PhotoViewModel.swift */; };
 		044C49932B736AD900CE947D /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044C49922B736AD900CE947D /* SearchBar.swift */; };
 		044C49962B736B3000CE947D /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044C49952B736B3000CE947D /* PhotoView.swift */; };
+		045B29322B959E77002A58F3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 045B29342B959E77002A58F3 /* Localizable.strings */; };
+		045B29372B96F618002A58F3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 045B29392B96F618002A58F3 /* Localizable.strings */; };
 		04E0BC6D2B721A25001652D0 /* FlickrAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0BC6C2B721A25001652D0 /* FlickrAppApp.swift */; };
 		04E0BC6F2B721A25001652D0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0BC6E2B721A25001652D0 /* ContentView.swift */; };
 		04E0BC712B721A26001652D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E0BC702B721A26001652D0 /* Assets.xcassets */; };
@@ -53,6 +55,8 @@
 		044C498F2B73665F00CE947D /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		044C49922B736AD900CE947D /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		044C49952B736B3000CE947D /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
+		045B29332B959E77002A58F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		045B29382B96F618002A58F3 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		04E0BC692B721A25001652D0 /* FlickrApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E0BC6C2B721A25001652D0 /* FlickrAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrAppApp.swift; sourceTree = "<group>"; };
 		04E0BC6E2B721A25001652D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -178,6 +182,8 @@
 				04E0BC702B721A26001652D0 /* Assets.xcassets */,
 				04E0BC722B721A26001652D0 /* FlickrApp.entitlements */,
 				04E0BC732B721A26001652D0 /* Preview Content */,
+				045B29342B959E77002A58F3 /* Localizable.strings */,
+				045B29392B96F618002A58F3 /* Localizable.strings */,
 			);
 			path = FlickrApp;
 			sourceTree = "<group>";
@@ -293,6 +299,7 @@
 			knownRegions = (
 				en,
 				Base,
+				hi,
 			);
 			mainGroup = 04E0BC602B721A25001652D0;
 			productRefGroup = 04E0BC6A2B721A25001652D0 /* Products */;
@@ -312,6 +319,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				04E0BC752B721A26001652D0 /* Preview Assets.xcassets in Resources */,
+				045B29372B96F618002A58F3 /* Localizable.strings in Resources */,
+				045B29322B959E77002A58F3 /* Localizable.strings in Resources */,
 				04E0BC712B721A26001652D0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,6 +392,25 @@
 			targetProxy = 04E0BC852B721A26001652D0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		045B29342B959E77002A58F3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				045B29332B959E77002A58F3 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		045B29392B96F618002A58F3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				045B29382B96F618002A58F3 /* hi */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		04E0BC8C2B721A26001652D0 /* Debug */ = {

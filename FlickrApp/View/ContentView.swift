@@ -17,7 +17,7 @@ struct ContentView: View {
                                      Label("Favorite", systemImage: "heart")
                                  }
                     .tag(1)
-                SettingsTab()
+                SettingsTab(viewModel: viewModel)
                                 .tabItem {
                                     Label("Settings", systemImage: "gearshape")
                                 }

@@ -11,7 +11,7 @@ class PhotoViewModel: ObservableObject {
     @Published var favorites: [Photo] = []
     @Published var page = 1
     @Published var isLoading = false
-    
+    @Published var isDarkModeEnabled = false
     
     func searchPhotos(query: String) {
         guard !isLoading else {return}
@@ -56,5 +56,24 @@ class PhotoViewModel: ObservableObject {
             favorites.remove(at: index)
         }
     }
+    func setDarkMode(_ isDarkModeEnabled: Bool) {
+        self.isDarkModeEnabled = isDarkModeEnabled
+        
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let window = windowScene.windows.first else {
+            return
+        }
+        
+        if isDarkModeEnabled {
+            window.overrideUserInterfaceStyle = .dark
+        } else {
+            window.overrideUserInterfaceStyle = .light
+        }
+    }
+
 }
 
+//@Published var isDarkModeEnabled: Bool = false
+class ThemeManager: ObservableObject {
+    @Published var isDarkModeEnabled: Bool = false
+}
